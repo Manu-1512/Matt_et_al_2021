@@ -1,4 +1,11 @@
-#Manu Singh 20 November 2020
+###############
+
+# ====================================
+# Author:Manu Singh 20 November 2020
+
+# =====================================
+# Set Enviornment variables as per the .bash_profiles on the system
+# =====================================
 
 #first we are dealing with TE coordinates of human genome
 # the file name is  "Human_class2_TE.bed"
