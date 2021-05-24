@@ -77,7 +77,6 @@ saveRDS(colon_objs, file = paste0("/seurat_obj/Seu_", colon_file_name, ".rds"))
 colon <- merge(x=colon_objs[[1]], y=c(colon_objs[[2]],colon_objs[[3]],colon_objs[[4]],colon_objs[[5]],colon_objs[[6]],colon_objs[[7]]), add.cell.ids = c("CD_1", "NIBD_1", "NIBD_2","NIBD_3","NIBD_4", "CD_2", "CD_3"), project="Praveen");
 rm(colon_objs); # save some space
 str(colon@meta.data) # examine the structure of the Seurat object meta data
-saveRDS(colon, file = sprintf("%s/MergedSeuratObject.rds", outdir));
 
 mito.genes <- grep(pattern = "^MT-", x = rownames(x = colon), value = TRUE);
 percent.mito <- Matrix::colSums(x = GetAssayData(object = colon, slot = 'counts')[mito.genes, ]) / Matrix::colSums(x = GetAssayData(object = colon, slot = 'counts'));
@@ -92,7 +91,7 @@ s.genes <- cc.genes$s.genes
 g2m.genes <- cc.genes$g2m.genes
 colon <- CellCycleScoring(colon, s.features = s.genes, g2m.features = g2m.genes, set.ident = TRUE)
 
-saveRDS(colon, file = "Merged_seurat_objects_Praveen_NIBD_CD_samples", colon_file_name, ".rds"))
+saveRDS(colon, file = "Merged_seurat_objects_Praveen_NIBD_CD_samples", colon_file_name, ".rds")
 
 
 # These following commands are to check if data needs to be subset , we will store it for now and use it later
