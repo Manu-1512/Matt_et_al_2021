@@ -105,7 +105,7 @@ dev.off()
 ############################ Most variable TEs belong to certain families
 
 
-mvgs  <- VariableFeatures(pbmc)
+mvgs  <- VariableFeatures(colon_integrated)
 mvte <- mvgs[grep("TELONG", mvgs)]
 
 man  <- (sapply(strsplit(ma,"-CHR"),"[[",1))
