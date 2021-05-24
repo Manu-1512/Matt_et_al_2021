@@ -55,9 +55,6 @@ library(remotes)
 
 pre_doublets <- colon
 
-Idents(pre_doublets) <- pre_doublets$celltypes
-
-
 colon_normalized <- SCTransform(pre_doublets)
 
 
