@@ -55,7 +55,7 @@ cat hg19_Genes.fa Human_class2_TE_ID.fa > hg19_Genes_long_TE_ID.fa
 grep ">" hg19_Genes_long_TE_ID.fa | sed 's/>//g' | awk '{print $1,$1}' OFS="\t" > txp2gene.tsv
 
 
-/programs/salmon-1.2.1/bin/salmon index -t Ens_75Genes_long_TE_ID.fa -i Genes_TEindex -k 31
+/programs/salmon-1.2.1/bin/salmon index -t hg19_Genes_long_TE_ID.fa -i Genes_TEindex -k 31
 
 ### The required files to run Alevin is here
 /workdir/Manu/Homo_Genome/Genome/bed_files/Alevin/TE_long/Genes_TEindex
