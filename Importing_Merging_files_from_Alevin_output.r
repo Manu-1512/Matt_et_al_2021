@@ -42,11 +42,6 @@ sessionInfo()
 
 
 
-files <- file.path("/workdir/Manu/Data/colon_seq/Praveen/CD_AC/CD_1/alevin/quants_mat.gz")
-
-pbmc <- CreateSeuratObject(counts = txi , min.cells = 3, min.features = 200, project = "CD_3")
-
-
 
 Praveen_files <- list.files()
 for(j in 1:length(Praveen_files)) {
