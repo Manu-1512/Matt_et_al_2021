@@ -9,5 +9,9 @@ _**3.**_ Next file ```Imorting_Merging_files_fromAlevin_output.r``` is where we 
 
 _**4.**_ Now we remove the doublets, and annotate the cells from merged but not integrated objects using the codes in ```Doublet_removed_Annotating_cells_from_merged_object.r```
 
-**DATA ANALYSIS** - Once the datasets were merged or even as individual files, we performed the integration, normalization, dimension reduction, visualization, and trajectory analysis of the single cellular clusters. Also, TE loci graphs were generated using the normalized data. All of the relevant codes are present in the file ```Data_integration_Dimension_reduction_visualization.r```
+**DATA ANALYSIS** - 
+                Once the datasets were merged or even as individual files, we performed the integration, normalization, dimension reduction, visualization, and                     trajectory analysis of the single cellular clusters. Also, TE loci graphs were generated using the normalized data. All of the relevant codes are                   present in the file ```Data_integration_Dimension_reduction_visualization.r```
 
+               _**TE family level analysis**_ 
+               This is followup of previous code where we analyze the data for TEs at family level. Also by removing all the TEs and comparing with genes only                      analysis.
+              
