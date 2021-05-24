@@ -7,4 +7,4 @@ Then we run Alevin on all the 10X generated samples at once using ```Running_Ale
 
 Next file ```Imorting_Merging_files_fromAlevin_output.r``` is where we import and merge all datasets in one seurat object. We also calculate the percentage of mitochondrial or ribosomal genes, and the statistics of numbers of genes, UMIs in single cells
 
-Now we annotate the cells from merged but not integrated objects using the codes in ```Annotating_cells_from_merged_object.r```
+Now we remove the doublets, and annotate the cells from merged but not integrated objects using the codes in ```Doublet_removed_Annotating_cells_from_merged_object.r```
