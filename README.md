@@ -7,11 +7,12 @@ _**2.**_ we run Alevin on all the 10X generated samples at once using ```Running
 
 _**3.**_ Next file ```Imorting_Merging_files_fromAlevin_output.r``` is where we import and merge all datasets in one seurat object. We also calculate the percentage of mitochondrial or ribosomal genes, and the statistics of numbers of genes, UMIs in single cells
 
-_**4.**_ Now we remove the doublets, and annotate the cells from merged but not integrated objects using the codes in ```Doublet_removed_Annotating_cells_from_merged_object.r```
+_**4.**_ Now we remove the doublets, and annotate the cells from merged but not integrated objects using the codes in                           ```Doublet_removed_Annotating_cells_from_merged_object.r```
 
 **DATA ANALYSIS** - 
-                Once the datasets were merged or even as individual files, we performed the integration, normalization, dimension reduction, visualization, and                     trajectory analysis of the single cellular clusters. Also, TE loci graphs were generated using the normalized data. All of the relevant codes are                   present in the file ```Data_integration_Dimension_reduction_visualization.r```
+                Once the datasets were merged or even as individual files, we performed the integration, normalization, dimension reduction, visualization, and                     trajectory analysis of the single cellular clusters. Also, TE loci graphs were generated using the normalized data. All of the relevant codes are                   present in the file    ```Data_integration_Dimension_reduction_visualization.r```
 
   _**TE family level analysis**_ 
-               This is followup of previous code where we analyze the data for TEs at family level. Also by removing all the TEs and comparing with genes only                      analysis.
+               This is followup of previous code where we analyze the data for TEs at family level. Also by removing all the TEs and comparing with genes only                      analysis. Code is given in ```TE_analysis_at_family_level_and_only_genes_analysis.r```
+               
               
