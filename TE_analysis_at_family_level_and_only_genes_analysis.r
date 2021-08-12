@@ -29,7 +29,7 @@ counts <- as.data.frame(colon_integrated[["RNA"]]@counts)
 
 TE_fams <- counts[(grep("TELONG",rownames(counts))),]
 
-TosumV1 <- (sapply(strsplit(rownames(TE_fams),"-DUP"),"[[",1))
+TosumV1 <- (sapply(strsplit(sapply(strsplit(rownames(TE_fams),"-DUP"),"[[",1),"-CHR"),"[[",1))
 
 TE_fams$Tosum <- TosumV1
 
@@ -49,8 +49,22 @@ rownames(TE_famsV2_sumMatrix) <- (unlist(TE_famsV2_sum[,1]))
 
 ###### Now getting the genes dataframe
 All_joined_countMatrixRemaining <- counts[(-grep("TELONG",rownames(counts))),]
+gen = (All_joined_countMatrixRemaining)
 
-All_joined_countMatrixFamilyWise <- (rbind(All_joined_countMatrixRemaining,as.matrix(TE_famsV2_sumMatrix)))
+TosumV2 <- (sapply(strsplit(rownames(gen),"-ENS"),"[[",1))
+
+gen$Tosum <- TosumV2
+genV2 <- data.table(gen)
+genV2_sum <- genV2[,lapply(.SD,sum),by=Tosum, .SDcols=(colnames(genV2)[-(which(colnames(genV2)=="Tosum"))])]
+rownames(genV2_sum) <- (unlist(genV2_sum[,1]))
+genV2_sumMatrix <- as.matrix(genV2_sum[,-1])
+rownames(genV2_sumMatrix) <- (unlist(genV2_sum[,1]))
+
+#dim(genV2_sumMatrix)
+#dim(TE_famsV2_sumMatrix)
+
+All_joined_countMatrixFamilyWise <- (rbind(genV2_sumMatrix,as.matrix(TE_famsV2_sumMatrix)))
+
 
 celltypeCondition <- colon_integrated$celltypeCondition
 celltypes <- colon_integrated$celltypes
