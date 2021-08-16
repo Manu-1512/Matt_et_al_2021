@@ -1,10 +1,11 @@
 #Manu Singh 26 Dec 2021
 
+ #!/bin/bash 
 export PATH=/programs/salmon-1.2.1/bin:$PATH
 
-my_index = /workdir/Manu/Homo_Genome/Genome/bed_files/Alevin/Genes_TEindex
+my_index=/workdir/Manu/Homo_Genome/Genome/bed_files/Alevin/Genes_TEindex
 
-my_tgmap = /workdir/Manu/Homo_Genome/Genome/bed_files/Alevin/TE_long/txp2gene.tsv
+my_tgmap=/workdir/Manu/Homo_Genome/Genome/bed_files/Alevin/TE_long/txp2gene.tsv
 
 # Running Alevin on the transcriptome that we build using genes and TEs
 
